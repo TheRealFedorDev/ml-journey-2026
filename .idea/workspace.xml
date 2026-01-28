@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="TestCommit!">
-      <change afterPath="$PROJECT_DIR$/projects/AI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/Ml_As_Excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big_projects/Kaggle_Cardiovascular_Disease_dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big_projects/cardio_train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniprojects/Augmentation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/AI_Augmentation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/AI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.AI.executor": "Run",
-    "Python.Pandus_Test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.AI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AI_Augmentation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Kaggle_Cardiovascular_Disease_dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Pandus_Test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Фёдор/PycharmProjects/ml-journey-2026&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.AI">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\big_projects" />
+      <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Kaggle_Cardiovascular_Disease_dataset">
     <configuration name="AI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
@@ -73,6 +83,50 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/AI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AI_Augmentation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ml-journey-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/AI_Augmentation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Kaggle_Cardiovascular_Disease_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ml-journey-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/big_projects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/big_projects/Kaggle_Cardiovascular_Disease_dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -105,6 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Kaggle_Cardiovascular_Disease_dataset" />
+        <item itemvalue="Python.AI_Augmentation" />
         <item itemvalue="Python.AI" />
         <item itemvalue="Python.Pandus_Test" />
       </list>
@@ -113,10 +169,11 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="" />

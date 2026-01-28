@@ -8,6 +8,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 
+
 # ==================== 1. ПОДГОТОВКА ДАННЫХ ====================
 # (используем твой код с исправлениями)
 
@@ -73,6 +74,66 @@ y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32).view(-1, 1)
 print(f"Размерность X_train: {X_train_tensor.shape}")
 print(f"Размерность y_train: {y_train_tensor.shape}")
 
+import numpy as np
+
+# Наши исходные тренировочные данные
+print("Исходные тренировочные данные:")
+print(train_df)
+
+
+# Функция для создания синтетических пациентов
+def create_better_synthetic_data(n_samples=100):
+    synthetic = []
+
+    for _ in range(n_samples):
+        patient = {}
+
+        # Возраст: нормальное распределение
+        patient['age'] = np.random.normal(40, 10)
+        patient['age'] = max(20, min(80, patient['age']))
+
+        # Давление: зависит от возраста
+        base_pressure = 120
+        age_effect = (patient['age'] - 40) * 0.5  # с возрастом давление растёт
+        patient['blood_pressure'] = np.random.normal(base_pressure + age_effect, 10)
+
+        # BMI: нормальное распределение
+        patient['bmi'] = np.random.normal(25, 4)
+
+        # Холестерин: зависит от возраста и BMI
+        cholesterol_prob = 0.3 + 0.005 * (patient['age'] - 30) + 0.01 * (patient['bmi'] - 25)
+        patient['cholesterol'] = 'high' if np.random.random() < cholesterol_prob else np.random.choice(
+            ['medium', 'low'])
+
+        # Курильщик: случайно, но чаще с возрастом
+        smoker_prob = 0.2 + 0.005 * (patient['age'] - 30)
+        patient['smoker'] = 'yes' if np.random.random() < smoker_prob else 'no'
+
+        # Диагноз: ЗАВИСИМ ОТ ПРИЗНАКОВ (это важно!)
+        risk_score = 0
+        risk_score += 0.1 if patient['age'] > 50 else 0
+        risk_score += 0.2 if patient['blood_pressure'] > 140 else 0
+        risk_score += 0.3 if patient['cholesterol'] == 'high' else 0.1 if patient['cholesterol'] == 'medium' else 0
+        risk_score += 0.2 if patient['smoker'] == 'yes' else 0
+        risk_score += 0.1 if patient['bmi'] > 30 else 0
+
+        # Вероятность болезни
+        disease_prob = 1 / (1 + np.exp(-risk_score))
+        patient['diagnosis'] = 1 if np.random.random() < disease_prob else 0
+
+        synthetic.append(patient)
+
+    return pd.DataFrame(synthetic)
+
+
+print("Создаём реалистичные синтетические данные...")
+realistic_synthetic = create_better_synthetic_data(200)
+print(f"Создано {len(realistic_synthetic)} реалистичных пациентов")
+print("\nРаспределение диагнозов:")
+print(realistic_synthetic['diagnosis'].value_counts())
+print("\nКорреляция возраста и давления:")
+print(realistic_synthetic[['age', 'blood_pressure']].corr())
+
 
 # ==================== 2. СОЗДАНИЕ НЕЙРОСЕТИ ====================
 import torch.nn as nn
@@ -119,6 +180,42 @@ print(simple_model)
 simple_params = sum(p.numel() for p in simple_model.parameters())
 print(f"Параметров: {simple_params}")
 print(f"Было: 37, Стало: {simple_params}")
+
+# Создаём новую модель
+augmented_model = SimpleMedicalNN(input_size=7)
+
+
+# Обучаем на расширенных данных
+def train_on_augmented(model, epochs=200):
+    criterion = nn.BCELoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+
+    for epoch in range(epochs):
+        # Обучаем на ВСЕХ расширенных данных
+        predictions = model(X_augmented_tensor)
+        loss = criterion(predictions, y_augmented_tensor)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        if (epoch + 1) % 50 == 0:
+            with torch.no_grad():
+                # Проверяем на оригинальных train
+                orig_train_preds = model(X_train_tensor)
+                orig_train_acc = ((orig_train_preds > 0.5).float() == y_train_tensor).float().mean()
+
+                # Проверяем на test
+                test_preds = model(X_test_tensor)
+                test_acc = ((test_preds > 0.5).float() == y_test_tensor).float().mean()
+
+                print(f"Эпоха {epoch + 1}: Orig Train Acc = {orig_train_acc:.1%}, Test Acc = {test_acc:.1%}")
+
+    return model
+
+
+print("\nОбучаем на расширенных данных...")
+trained_augmented = train_on_augmented(augmented_model)
 
 class DropoutMedicalNN(nn.Module):
     def __init__(self, input_size):
@@ -355,8 +452,43 @@ trained_simple = train_model(simple_model)
 
 
 print("\n" + "=" * 50)
-print("ТЕСТИРОВАНИЕ НА НОВЫХ ДАННЫХ:")
+print("4. ТЕСТИРОВАНИЕ НА НОВЫХ ДАННЫХ:")
 print("=" * 50)
+
+print("\n" + "=" * 60)
+print("СРАВНЕНИЕ: МОДЕЛЬ ОБУЧЕННАЯ НА РАСШИРЕННЫХ ДАННЫХ")
+print("=" * 60)
+
+# Проверяем на разных наборах
+with torch.no_grad():
+    trained_augmented.eval()
+
+    # 1. Оригинальные train (4 пациента)
+    orig_train_preds = trained_augmented(X_train_tensor)
+    orig_train_acc = ((orig_train_preds > 0.5).float() == y_train_tensor).float().mean()
+
+    # 2. Расширенные train (54 пациента)
+    aug_train_preds = trained_augmented(X_augmented_tensor)
+    aug_train_acc = ((aug_train_preds > 0.5).float() == y_augmented_tensor).float().mean()
+
+    # 3. Test (2 пациента)
+    test_preds = trained_augmented(X_test_tensor)
+    test_acc = ((test_preds > 0.5).float() == y_test_tensor).float().mean()
+
+    print(f"Accuracy на оригинальных train: {orig_train_acc:.1%}")
+    print(f"Accuracy на расширенных train:  {aug_train_acc:.1%}")
+    print(f"Accuracy на тестовых данных:    {test_acc:.1%}")
+    print(f"Loss на тесте: {criterion(test_preds, y_test_tensor):.4f}")
+
+    # Выводим предсказания с вероятностями
+    print("\nПодробные предсказания на тесте:")
+    for i in range(len(X_test_tensor)):
+        prob = test_preds[i].item()
+        real = y_test_tensor[i].item()
+        pred = 1 if prob > 0.5 else 0
+        correct = "✓" if pred == real else "✗"
+        print(f"Пациент {i}: Вероятность = {prob:.2%}, Предсказано = {pred}, Реально = {real} {correct}")
+
 
 with torch.no_grad():
     # Предсказания на test данных (которые модель не видела при обучении)
