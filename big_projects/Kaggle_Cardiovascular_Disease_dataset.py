@@ -105,3 +105,44 @@ def clean_blood_pressure(df):
 
 df_clean = clean_blood_pressure(df)
 print(f"\nПосле очистки давления: {len(df_clean)} строк (было {len(df)})")
+
+# Пайплайн для числовых данных
+numeric_pipeline = Pipeline([
+    ('imputer', SimpleImputer(strategy='median')),
+    ('scaler', StandardScaler())
+])
+# Пайплайн для категориальных данных
+
+categorical_pipeline = Pipeline([
+    ('imputer', SimpleImputer(strategy='most_frequent')),    # заполняем модой
+    ('encoder', OneHotEncoder(drop='first', handle_unknown='ignore')) # one-hot encoding
+])
+# Объединяем
+preprocessor = ColumnTransformer([
+    ('num', numeric_pipeline, numerical_features),
+    ('cat', categorical_pipeline, categorical_features)
+])
+# Обучаем препроцессор НА ТРЕНИРОВОЧНЫХ ДАННЫХ
+X_train_processed = preprocessor.fit_transform(X_train)
+X_val_processed = preprocessor.transform(X_val)
+X_test_processed = preprocessor.transform(X_test)
+
+print(f"Train после обработки: {X_train_processed.shape}")
+print(f"Validation после обработки: {X_val_processed.shape}")
+print(f"Test после обработки: {X_test_processed.shape}")
+
+class_counts = y_train.value_counts()
+print(f"Здоровые (0): {class_counts[0]} ({class_counts[0]/len(y_train)*100:.1f}%)")
+print(f"Больные (1): {class_counts[1]} ({class_counts[1]/len(y_train)*100:.1f}%)")
+
+
+# Если дисбаланс сильный, применяем технику
+from imblearn.over_sampling import SMOTE
+
+if abs(class_counts[0] - class_counts[1]) > .1 * len(y_train):
+    print("\nПрименяем SMOTE для балансировки классов...")
+    smote = SMOTE(random_state=42)
+    X_train_balanced, y_train_balanced = smote.fit_resample(X_train_processed, y_train)
+    print(f"После балансировки: {X_train_balanced.shape}")
+else:
+    X_train_balanced, y_train_balanced = X_train_processed, y_train
