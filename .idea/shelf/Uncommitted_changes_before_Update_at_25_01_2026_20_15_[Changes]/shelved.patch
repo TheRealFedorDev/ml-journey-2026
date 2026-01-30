@@ -1,0 +1,255 @@
+Index: projects/Ml_As_Excel.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/projects/Ml_As_Excel.py b/projects/Ml_As_Excel.py
+new file mode 100644
+--- /dev/null	(date 1769188723355)
++++ b/projects/Ml_As_Excel.py	(date 1769188723355)
+@@ -0,0 +1,77 @@
++# 1 Основа таблиц
++import pandas as pd
++# Создаем таблицу ВРУЧНУЮ, чтобы понять структуру
++# Это список списков - каждая строка = один цветок
++data = [
++    [5.1, 3.5, 1.4, 0.2, 'setosa'],
++    [7.0, 3.2, 4.7, 1.4, 'versicolor'],
++    [6.3, 3.3, 6.0, 2.5, 'virginica']
++]
++
++columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
++
++
++# Дата фрейм pd превращает обычную таблицу формата Excel в спец. таблицу с колоннами из columns
++df = pd.DataFrame(data, columns=columns)
++print("Моя самая первая таблица")
++print(df)
++
++
++# 2 Параметры
++
++print("Размеры таблицы\n", df.shape, "\n")
++
++print("Типы данных\n", df.dtypes, "\n")
++
++print("Цветок\n", df.iloc[0], "\n") #iloc = index location(обращение по номеру строки)
++
++for i in range(df.shape[0]):
++    print("Цветок", i, "\n", df.iloc[i], "\n")
++
++print(df.iloc[0]["sepal_length"])
++
++# 3 Разделение
++X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
++y = df['species']
++
++print("Признаки (X):")
++print(X)
++print("\nЦелевые значения (y):")
++print(y)
++
++new_flower = [[5.8, 1.0, 2.5, 3.5]]
++new_df = pd.DataFrame(new_flower, columns=X.columns)
++print(new_df)
++
++# 4 Математика
++import math
++def euclidean_distance(row1, row2):
++    """Евклидово расстояние между двумя точками"""
++    distance = 0
++    for i in range(len(row1)):
++        distance += (row1[i] - row2[i]) ** 2
++    return math.sqrt(distance)
++
++new_flower_values = new_flower[0]
++distances = []
++for i in range(len(df)):
++    flower_values = df.iloc[i][['sepal_length', 'sepal_width',
++                                'petal_length', 'petal_width']].values
++    dist = euclidean_distance(new_flower_values, flower_values)
++    distances.append((dist, df.iloc[i]['species']))
++
++print("Расстояния до известных цветков")
++for dist, species in distances:
++    print(f"{species}: {dist:.2f}")
++
++nearest_neighbor = min(distances, key=lambda x: x[0])
++print(f"\nБлижайший сосед: {nearest_neighbor[1]} (расстояние: {nearest_neighbor[0]:.2f})")
++print(f"Предсказание: новый цветок, вероятно, {nearest_neighbor[1]}")
++
++from sklearn.neighbors import KNeighborsClassifier
++
++model = KNeighborsClassifier(n_neighbors=1)
++
++model.fit(X,y)
++
++prediction = model.predict(new_df)
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2e072db7-0c14-4078-8f30-9b961020ab87\" name=\"Changes\" comment=\"TestCommit!\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"TheRealFedorDev\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/TheRealFedorDev/ml-journey-2026.git\",\r\n    \"accountId\": \"baa9b360-dac4-4096-81cf-ae1682d9a36f\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 8\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"38AVx8zy8A9Pg7BouSPAG1WKsLz\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2e072db7-0c14-4078-8f30-9b961020ab87\" name=\"Changes\" comment=\"\" />\r\n      <created>1768242605944</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1768242605944</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"TestCommit!\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1768243195167</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1768243195167</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"TestCommit!\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"TestCommit!\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b4163217c3011e3c4f15bd7c3ba444b955231d05)
++++ b/.idea/workspace.xml	(date 1769361315018)
+@@ -5,53 +5,94 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="TestCommit!">
++      <change afterPath="$PROJECT_DIR$/projects/Ml_As_Excel.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "TheRealFedorDev"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;TheRealFedorDev&quot;
+   }
+-}]]></component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/TheRealFedorDev/ml-journey-2026.git",
+-    "accountId": "baa9b360-dac4-4096-81cf-ae1682d9a36f"
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/TheRealFedorDev/ml-journey-2026.git&quot;,
++    &quot;accountId&quot;: &quot;baa9b360-dac4-4096-81cf-ae1682d9a36f&quot;
+   }
+-}]]></component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 8
+-}]]></component>
++}</component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 8
++}</component>
+   <component name="ProjectId" id="38AVx8zy8A9Pg7BouSPAG1WKsLz" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
+-    "ignore.virus.scanning.warn.message": "true"
+-  }
+-}]]></component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;Python.Ml_As_Excel.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
++  }
++}</component>
++  <component name="RunManager">
++    <configuration name="Ml_As_Excel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="ml-journey-2026" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/Ml_As_Excel.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Python.Ml_As_Excel" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
++        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+       </set>
+     </attachedChunks>
+   </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+       <changelist id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="" />
+Index: .idea/ml-journey-2026.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.12\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/ml-journey-2026.iml b/.idea/ml-journey-2026.iml
+--- a/.idea/ml-journey-2026.iml	(revision b4163217c3011e3c4f15bd7c3ba444b955231d05)
++++ b/.idea/ml-journey-2026.iml	(date 1769184082989)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="jdk" jdkName="Python 3.12" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.13 (Diff AIs)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.12\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.12\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision b4163217c3011e3c4f15bd7c3ba444b955231d05)
++++ b/.idea/misc.xml	(date 1769184083000)
+@@ -3,5 +3,5 @@
+   <component name="Black">
+     <option name="sdkName" value="Python 3.12" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (Diff AIs)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
