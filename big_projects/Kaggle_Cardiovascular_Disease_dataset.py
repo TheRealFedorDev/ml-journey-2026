@@ -8,6 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 import torch
 import matplotlib.pyplot as plt
+import torch.nn as nn
 
 # Download latest version
 #path = kagglehub.dataset_download("sulianova/cardiovascular-disease-dataset")
@@ -45,7 +46,7 @@ X_train_val, X_test, y_train_val, y_test = train_test_split(
 X_train, X_val, y_train, y_val = train_test_split(
     X_train_val, y_train_val,
     random_state=42,
-    test_size=0.176,
+    test_size=0.1765,
     stratify=y_train_val
 )
 
@@ -146,3 +147,81 @@ if abs(class_counts[0] - class_counts[1]) > .1 * len(y_train):
     print(f"После балансировки: {X_train_balanced.shape}")
 else:
     X_train_balanced, y_train_balanced = X_train_processed, y_train
+
+from torch.utils.data import TensorDataset, DataLoader
+
+X_train_tensor = torch.tensor(X_train_processed, dtype=torch.float32)
+y_train_tensor = torch.tensor(y_train_balanced.values, dtype=torch.float32).view(-1,1)
+X_val_tensor = torch.tensor(X_val_processed, dtype=torch.float32)
+y_val_tensor = torch.tensor(y_val.values, dtype=torch.float32).view(-1,1)
+
+train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
+val_dataset = TensorDataset(X_val_tensor, y_val_tensor)
+# Используем батчи для экономии памяти
+batch_size = 64
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+
+print(f"Количество батчей в train: {len(train_loader)}")
+print(f"Количество батчей в validation: {len(val_loader)}")
+
+debug_size = .1
+X_train_small, _, y_train_small, _ = train_test_split(
+    X_train, y_train,
+    train_size=debug_size,
+    random_state=42,
+    stratify=y_train
+)
+
+print(f"\nДля отладки используем {len(X_train_small)} примеров")
+
+import joblib
+
+joblib.dump(preprocessor, 'preprocessor.pkl')
+
+np.savez_compressed(
+    'processed_data.npz',
+    X_train=X_train_processed,
+    X_val=X_val_processed,
+    X_test=X_test_processed,
+    y_train=y_train.values,
+    y_val=y_val.values,
+    y_test=y_test.values,
+)
+
+print("Данные сохранены!")
+
+
+class SimpleCardioNet(nn.Module):
+    def __init__(self, input_size):
+        super().__init__()
+        # Вход: 13 признаков → Скрытый слой: 8 нейронов → Выход: 1 нейрон
+        self.layer1 = nn.Linear(input_size, 8)  # 13 → 8
+        self.layer2 = nn.Linear(8,1)  # 8 → 1
+        self.activation = nn.ReLU()
+        self.output_activation = nn.Sigmoid()
+
+    def forward(self,x):
+        x = self.layer1(x)
+        x = self.activation(x)
+        x = self.layer2(x)
+        x = self.output_activation(x)
+        return x
+
+input_size = 13
+simple_model = SimpleCardioNet(input_size)
+
+print("=== ПРОСТАЯ МОДЕЛЬ ===")
+print(f"Входные признаки: {input_size}")
+print(f"Слой 1: Linear({input_size}, 8)")
+print(f"Слой 2: Linear(8, 1)")
+print(f"Всего параметров: {sum(p.numel() for p in simple_model.parameters()):,}")
+print()
+
+
+print("Размеры параметров:")
+for name, param in simple_model.named_parameters():
+    print(f"  {name}: {param.shape}")
+
+def train_one_epoch_simple(model, train_loader):
+    criterion = nn.BCELoss()

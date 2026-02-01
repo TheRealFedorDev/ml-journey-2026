@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="I Studied A.I. ! Now I'm gonna make first big project🥹">
+    <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="Forgor to commit this shi xds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big_projects/Kaggle_Cardiovascular_Disease_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_projects/Kaggle_Cardiovascular_Disease_dataset.py" afterDir="false" />
     </list>
@@ -194,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769627620340</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Project Bio. Made preprop + studied SMOTE!">
+      <option name="closed" value="true" />
+      <created>1769797767959</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1769797767959</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Forgor to commit this shi xds">
+      <option name="closed" value="true" />
+      <created>1769797793587</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1769797793587</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +227,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TestCommit!" />
     <MESSAGE value="I Studied A.I. ! Now I'm gonna make first big project" />
-    <option name="LAST_COMMIT_MESSAGE" value="I Studied A.I. ! Now I'm gonna make first big project" />
+    <MESSAGE value="Project Bio. Made preprop + studied SMOTE!" />
+    <MESSAGE value="Forgor to commit this shi xds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forgor to commit this shi xds" />
   </component>
 </project>
