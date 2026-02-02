@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 import torch
 import matplotlib.pyplot as plt
 import torch.nn as nn
+from torch.utils.data import TensorDataset, DataLoader
 
 # Download latest version
 #path = kagglehub.dataset_download("sulianova/cardiovascular-disease-dataset")
@@ -145,10 +146,79 @@ if abs(class_counts[0] - class_counts[1]) > .1 * len(y_train):
     smote = SMOTE(random_state=42)
     X_train_balanced, y_train_balanced = smote.fit_resample(X_train_processed, y_train)
     print(f"После балансировки: {X_train_balanced.shape}")
+    # После применения SMOTE
+    print(f"\nПосле балансировки: {X_train_balanced.shape}")
+
+    # Проверяем и конвертируем y
+    print(f"Тип y_train_balanced: {type(y_train_balanced)}")
+    print(f"Форма y_train_balanced: {y_train_balanced.shape if hasattr(y_train_balanced, 'shape') else 'нет формы'}")
+
+    # Конвертируем y в правильный формат
+    if isinstance(y_train_balanced, pd.Series):
+        y_train_balanced_np = y_train_balanced.values
+    elif isinstance(y_train_balanced, np.ndarray):
+        y_train_balanced_np = y_train_balanced
+    else:
+        # Пробуем преобразовать
+        y_train_balanced_np = np.array(y_train_balanced)
+
+    print(f"y_train_balanced_np shape: {y_train_balanced_np.shape}")
+
+    # Теперь конвертируем ВСЕ данные
+    X_train_tensor = torch.tensor(X_train_balanced, dtype=torch.float32)
+    y_train_tensor = torch.tensor(y_train_balanced_np, dtype=torch.float32).view(-1, 1)
+
+    print(f"\nИтоговые размеры:")
+    print(f"X_train_tensor: {X_train_tensor.shape}")
+    print(f"y_train_tensor: {y_train_tensor.shape}")
+
+    # Проверка
+    if X_train_tensor.shape[0] != y_train_tensor.shape[0]:
+        print(f"⚠️  ВНИМАНИЕ: размеры не совпадают!")
+        print(f"   X имеет {X_train_tensor.shape[0]} примеров")
+        print(f"   y имеет {y_train_tensor.shape[0]} примеров")
+
+        # Исправляем: берём минимум из двух
+        min_size = min(X_train_tensor.shape[0], y_train_tensor.shape[0])
+        print(f"   Берём первые {min_size} примеров из каждого")
+
+        X_train_tensor = X_train_tensor[:min_size]
+        y_train_tensor = y_train_tensor[:min_size]
+
+        print(f"   Исправленные размеры:")
+        print(f"   X_train_tensor: {X_train_tensor.shape}")
+        print(f"   y_train_tensor: {y_train_tensor.shape}")
+
+    # Теперь создаём dataset
+    train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
+    print(f"\nTrain dataset создан: {len(train_dataset)} примеров")
+
+    # Аналогично для validation и test (они не проходили SMOTE)
+    X_val_tensor = torch.tensor(X_val_processed, dtype=torch.float32)
+    y_val_tensor = torch.tensor(y_val.values, dtype=torch.float32).view(-1, 1)
+
+    X_test_tensor = torch.tensor(X_test_processed, dtype=torch.float32)
+    y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32).view(-1, 1)
+
+    print(f"\nValidation: X={X_val_tensor.shape}, y={y_val_tensor.shape}")
+    print(f"Test: X={X_test_tensor.shape}, y={y_test_tensor.shape}")
+
+    # Создаём DataLoader
+    batch_size = 128
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(TensorDataset(X_val_tensor, y_val_tensor), batch_size=batch_size, shuffle=False)
+    test_loader = DataLoader(TensorDataset(X_test_tensor, y_test_tensor), batch_size=batch_size, shuffle=False)
+
+    print(f"\nDataLoader созданы:")
+    print(f"  Train батчей: {len(train_loader)}")
+    print(f"  Validation батчей: {len(val_loader)}")
+    print(f"  Test батчей: {len(test_loader)}")
 else:
     X_train_balanced, y_train_balanced = X_train_processed, y_train
 
-from torch.utils.data import TensorDataset, DataLoader
+
+
+
 
 X_train_tensor = torch.tensor(X_train_processed, dtype=torch.float32)
 y_train_tensor = torch.tensor(y_train_balanced.values, dtype=torch.float32).view(-1,1)
