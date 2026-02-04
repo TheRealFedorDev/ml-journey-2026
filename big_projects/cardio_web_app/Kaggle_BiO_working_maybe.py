@@ -56,6 +56,13 @@ def clean_data(df):
     # BMI
     df['bmi'] = df['weight'] / ((df['height'] / 100) ** 2)
 
+    # Пример: биологически возможные диапазоны (настрой под данные!)
+    df = df[(df['ap_hi'] >= 80) & (df['ap_hi'] <= 200)]
+    df = df[(df['ap_lo'] >= 50) & (df['ap_lo'] <= 150)]
+    df = df[(df['height'] >= 140) & (df['height'] <= 210)]
+    df['bmi'] = df['weight'] / ((df['height'] / 100) ** 2)
+    df = df[(df['bmi'] >= 15) & (df['bmi'] <= 45)]
+
     return df
 
 
