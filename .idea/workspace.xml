@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="Forgor to commit this shi xds">
-      <change afterPath="$PROJECT_DIR$/big_projects/cardio_web_app/Test_Lab1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/meme.code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/2026-02-04_18-28-11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/2026-02-04_18-35-43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/2026-02-04_18-35-55.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/2026-02-04_18-36-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/2026-02-04_18-36-09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/CNN(For images)/CNN (Computer Vision_ez).py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/CNN(For images)/CNN_Timeless1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" afterDir="false" />
+    <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="Reformat + Start CNN (Cifar idk)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_projects/cardio_web_app/Kaggle_BiO_working_maybe.py" beforeDir="false" afterPath="$PROJECT_DIR$/big_projects/cardio_web_app/Kaggle_BiO_working_maybe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_projects/cardio_web_app/best_cardio_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/big_projects/cardio_web_app/best_cardio_model.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_projects/cardio_web_app/cardio_preprocessor.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/big_projects/cardio_web_app/cardio_preprocessor.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_projects/cardio_web_app/model_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/big_projects/cardio_web_app/model_results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Base_AI/AI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/AI_Augmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Base_AI/AI_Augmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/Ml_As_Excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Pandus/Ml_As_Excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/Pandus.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Pandus/Pandus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/Pandus_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Pandus/Pandus_Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/Pandus_Test_Wtih_Human_Corrections.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Pandus/Pandus_Test_Wtih_Human_Corrections.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/Pandus_practika.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Pandus/Pandus_practika.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/best_model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Base_AI/best_model.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +72,7 @@
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\big_projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.cifar10_cnn">
+  <component name="RunManager" selected="Python.cifar10_cnn_better">
     <configuration name="CNN (Computer Vision_ez)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
@@ -132,28 +109,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/CNN(For images)/CNN_Timeless1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Kaggle_BiO_working_maybe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ml-journey-2026" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/big_projects/cardio_web_app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/big_projects/cardio_web_app/Kaggle_BiO_working_maybe.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -206,13 +161,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="cifar10_cnn_better" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ml-journey-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/СIFAR10 (still CNN)" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn_better.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cifar10_cnn_better" />
         <item itemvalue="Python.cifar10_cnn" />
         <item itemvalue="Python.CNN_Timeless1" />
         <item itemvalue="Python.CNN (Computer Vision_ez)" />
         <item itemvalue="Python.Test_Lab1" />
-        <item itemvalue="Python.Kaggle_BiO_working_maybe" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769797793587</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reformat + Start CNN (Cifar idk)">
+      <option name="closed" value="true" />
+      <created>1770220873631</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1770220873631</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,6 +268,7 @@
     <MESSAGE value="I Studied A.I. ! Now I'm gonna make first big project" />
     <MESSAGE value="Project Bio. Made preprop + studied SMOTE!" />
     <MESSAGE value="Forgor to commit this shi xds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgor to commit this shi xds" />
+    <MESSAGE value="Reformat + Start CNN (Cifar idk)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat + Start CNN (Cifar idk)" />
   </component>
 </project>
