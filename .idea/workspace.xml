@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="Reformat + Start CNN (Cifar idk)">
+      <change afterPath="$PROJECT_DIR$/quick-experiments/mayatnic_physics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,26 +45,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.AI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.AI_Augmentation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CNN (Computer Vision_ez).executor&quot;: &quot;Run&quot;,
-    &quot;Python.CNN_Timeless1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Kaggle_BiO_working_maybe.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Kaggle_Cardiovascular_Disease_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Pandus_Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_Lab1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cifar10_cnn.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Фёдор/PycharmProjects/ml-journey-2026&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.AI.executor": "Run",
+    "Python.AI_Augmentation.executor": "Run",
+    "Python.CNN (Computer Vision_ez).executor": "Run",
+    "Python.CNN_Timeless1.executor": "Run",
+    "Python.Kaggle_BiO_working_maybe.executor": "Run",
+    "Python.Kaggle_Cardiovascular_Disease_dataset.executor": "Run",
+    "Python.Pandus_Test.executor": "Run",
+    "Python.Test_Lab1.executor": "Run",
+    "Python.cifar10_cnn.executor": "Run",
+    "Python.mayatnic_physics.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Фёдор/PycharmProjects/ml-journey-2026"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\projects" />
@@ -72,7 +75,7 @@
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\big_projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.cifar10_cnn_better">
+  <component name="RunManager" selected="Python.mayatnic_physics">
     <configuration name="CNN (Computer Vision_ez)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
@@ -109,28 +112,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/CNN(For images)/CNN_Timeless1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_Lab1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ml-journey-2026" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/big_projects/cardio_web_app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/big_projects/cardio_web_app/Test_Lab1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,13 +164,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mayatnic_physics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ml-journey-2026" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quick-experiments" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quick-experiments/mayatnic_physics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mayatnic_physics" />
         <item itemvalue="Python.cifar10_cnn_better" />
         <item itemvalue="Python.cifar10_cnn" />
         <item itemvalue="Python.CNN_Timeless1" />
         <item itemvalue="Python.CNN (Computer Vision_ez)" />
-        <item itemvalue="Python.Test_Lab1" />
       </list>
     </recent_temporary>
   </component>
