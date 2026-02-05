@@ -43,26 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.AI.executor": "Run",
-    "Python.AI_Augmentation.executor": "Run",
-    "Python.CNN (Computer Vision_ez).executor": "Run",
-    "Python.CNN_Timeless1.executor": "Run",
-    "Python.Kaggle_BiO_working_maybe.executor": "Run",
-    "Python.Kaggle_Cardiovascular_Disease_dataset.executor": "Run",
-    "Python.Pandus_Test.executor": "Run",
-    "Python.Test_Lab1.executor": "Run",
-    "Python.cifar10_cnn.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Фёдор/PycharmProjects/ml-journey-2026"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.AI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AI_Augmentation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CNN (Computer Vision_ez).executor&quot;: &quot;Run&quot;,
+    &quot;Python.CNN_Timeless1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Kaggle_BiO_working_maybe.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Kaggle_Cardiovascular_Disease_dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Pandus_Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test_Lab1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cifar10_cnn.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Фёдор/PycharmProjects/ml-journey-2026&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\projects" />
