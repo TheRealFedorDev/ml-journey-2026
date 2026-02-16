@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="Reformat + Start CNN (Cifar idk)">
-      <change afterPath="$PROJECT_DIR$/quick-experiments/mayatnic_physics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ml-journey-2026.iml" afterDir="false" />
+    <list default="true" id="2e072db7-0c14-4078-8f30-9b961020ab87" name="Changes" comment="Finally Not Bugged PHysics projects">
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/physics_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quick-experiments/mayatnic_physics.py" beforeDir="false" afterPath="$PROJECT_DIR$/quick-experiments/mayatnic_physics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,31 +58,37 @@
     "Python.AI_Augmentation.executor": "Run",
     "Python.CNN (Computer Vision_ez).executor": "Run",
     "Python.CNN_Timeless1.executor": "Run",
+    "Python.DIR_Practice.executor": "Run",
     "Python.Kaggle_BiO_working_maybe.executor": "Run",
     "Python.Kaggle_Cardiovascular_Disease_dataset.executor": "Run",
     "Python.Pandus_Test.executor": "Run",
     "Python.Test_Lab1.executor": "Run",
     "Python.cifar10_cnn.executor": "Run",
+    "Python.dataset.executor": "Run",
+    "Python.main.executor": "Run",
     "Python.mayatnic_physics.executor": "Run",
+    "Python.physics_2.executor": "Run",
+    "Python.train.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Фёдор/PycharmProjects/ml-journey-2026"
+    "last_opened_file_path": "C:/Users/Фёдор/Downloads/claude-code-jetbrains-plugin-0.1.14-beta.zip",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\Learning_With_Obsidian_And_DeepSeek\data\raw" />
+      <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\Learning_With_Obsidian_And_DeepSeek" />
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\projects" />
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\projects\CNN(For images)" />
       <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\projects\Pandus" />
-      <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\projects\Base_AI" />
-      <recent name="C:\Users\Фёдор\PycharmProjects\ml-journey-2026\big_projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mayatnic_physics">
-    <configuration name="CNN (Computer Vision_ez)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.physics_2">
+    <configuration name="DIR_Practice" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,11 +97,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/CNN(For images)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/Small_Funcs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/CNN(For images)/CNN (Computer Vision_ez).py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/Small_Funcs/DIR_Practice.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -98,7 +110,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CNN_Timeless1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,11 +119,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/CNN(For images)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/CNN(For images)/CNN_Timeless1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,7 +132,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cifar10_cnn" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,11 +141,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/СIFAR10 (still CNN)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +154,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cifar10_cnn_better" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="physics_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,11 +163,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/СIFAR10 (still CNN)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/notes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/СIFAR10 (still CNN)/cifar10_cnn_better.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/notes/physics_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,7 +176,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mayatnic_physics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ml-journey-2026" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,11 +185,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quick-experiments" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quick-experiments/mayatnic_physics.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Learning_With_Obsidian_And_DeepSeek/src/train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.mayatnic_physics" />
-        <item itemvalue="Python.cifar10_cnn_better" />
-        <item itemvalue="Python.cifar10_cnn" />
-        <item itemvalue="Python.CNN_Timeless1" />
-        <item itemvalue="Python.CNN (Computer Vision_ez)" />
+        <item itemvalue="Python.physics_2" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.dataset" />
+        <item itemvalue="Python.DIR_Practice" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770220873631</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finally Not Bugged PHysics projects">
+      <option name="closed" value="true" />
+      <created>1770297776955</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1770297776955</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +292,7 @@
     <MESSAGE value="Project Bio. Made preprop + studied SMOTE!" />
     <MESSAGE value="Forgor to commit this shi xds" />
     <MESSAGE value="Reformat + Start CNN (Cifar idk)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat + Start CNN (Cifar idk)" />
+    <MESSAGE value="Finally Not Bugged PHysics projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally Not Bugged PHysics projects" />
   </component>
 </project>
