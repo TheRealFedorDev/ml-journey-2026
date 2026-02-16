@@ -5,7 +5,7 @@ import sys
 pygame.init()
 
 # Размеры экрана
-WIDTH, HEIGHT = 1920, 1080
+WIDTH, HEIGHT = 1600, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
 pygame.display.set_caption("Настраиваемый физический маятник")
 clock = pygame.time.Clock()
